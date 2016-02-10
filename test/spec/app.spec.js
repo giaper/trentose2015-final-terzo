@@ -3,8 +3,15 @@
 
 describe("Parla", function() {
 
-  it("should...", function() {  
-    
-  });    
+  it("getLenguagesScore should work properly", function() {  
+    expect(ParlaModel.getLanguageScore("non è blu", "Italian")).toBe(2);
+    expect(ParlaModel.getLanguageScore("pero sus le ha", "Spanish")).toBe(4);
+    expect(ParlaModel.getLanguageScore("to join the beatles", "English")).toBe(2);
+  });
+  it("detect lenguage should work properly", function(){
+    expect(ParlaModel.detectLanguage("non è blu")).toBe("Italian");
+    expect(ParlaModel.detectLanguage("to join the beatles")).toBe("English"); 
+    expect(ParlaModel.detectLanguage("pero sus le ha")).toBe("Spanish"); 
+  });
  
 });
